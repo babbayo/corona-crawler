@@ -12,7 +12,7 @@ express()
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
-    .get('/', (req, res) => (req, res) => res.send(showTimes()))
+    .get('/times', (req, res) => (req, res) => res.send(showTimes()))
     .get('/db', async (req, res) => {
         try {
             const client = await pool.connect()
