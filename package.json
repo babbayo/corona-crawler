@@ -8,15 +8,17 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "start-seoul": "node crawler/seoul-person.js",
     "test": "node test.js"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "pg": "^7.18.2"
   },
   "devDependencies": {
-    "request": "^2.81.0",
+    "request": "^2.88.2",
     "tape": "^4.7.0"
   },
   "repository": {

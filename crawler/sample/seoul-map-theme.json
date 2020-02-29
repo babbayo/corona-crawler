@@ -1,0 +1,30 @@
+{
+  "head": {
+    "PAGE_NO":"1","RETCODE":"0","DATA_COUNT":"1","PAGE_SIZE":"20000","TOTAL_COUNT":"1","PAGE_COUNT":"1"
+    },
+  "body":[{
+  "THM_ASSESS_UCNT":"0",
+  "THM_WRITER":"cms",
+  "THM_APP_A_LINK":"",
+  "THM_AUTH_CODE":"cleanzone",
+  "THM_THEME_NAME":"(코로나19) 클린존 : 방역안심시설",
+  "THM_THEME_DETAIL":"서울시는 확진자이동 동선 및 기타\n다중이용시설에 대한 방역소독을 실시하여\n시민들이 안심하고 이용할 수 있도록 하고있습니다.",
+  "TEMPLATE_INFO":"{&#34;timeMapInfo&#34;:&#91;{&#34;type&#34;:&#34;day&#34;}&#93;}","THM_REG_DATE":"2020-02-08 00:59:54","THM_USE_COUNT":"0","THM_UPDATE_DATE":"2020-02-23 14:59:59","THM_APP_I_EXEC":"","THM_MAIN_FCOLOR":"","THM_POLL_YN":"N","THM_USER_CATE":"","THM_HOME_ORDER":"","THM_MAIN_COLOR":"","THM_APP_A_EXEC":"","THM_THEME_ICONNAME":"","THM_USER_SDATE":"0001-01-01 00:00:00.0",
+
+  "SUBCATE":[{"SUB_CATE_IMG_URI":"/smgis/ucimgs/theme/11101834_S_20200208005855.PNG","SUB_CATE_NAME":"[확진자동선]",
+  "SUB_CATE_ID":"1","SUB_MENU_IMG_URI":""},
+  {"SUB_CATE_IMG_URI":"/smgis/ucimgs/theme/11101834_S_20200214170333.PNG","SUB_CATE_NAME":"전통시장","SUB_CATE_ID":"10","SUB_MENU_IMG_URI":"/"},
+  {"SUB_CATE_IMG_URI":"/smgis/ucimgs/theme/11101834_S_20200214170343.PNG","SUB_CATE_NAME":"학교","SUB_CATE_ID":"11","SUB_MENU_IMG_URI":"/"},
+  {"SUB_CATE_IMG_URI":"/smgis/ucimgs/theme/11101834_S_20200214170353.PNG","SUB_CATE_NAME":"경로당","SUB_CATE_ID":"12","SUB_MENU_IMG_URI":"/"},
+  {"SUB_CATE_IMG_URI":"/smgis/ucimgs/theme/11101834_S_20200223134446.PNG","SUB_CATE_NAME":"[신천지예수교회]","SUB_CATE_ID":"13","SUB_MENU_IMG_URI":""},
+  {"SUB_CATE_IMG_URI":"/smgis/ucimgs/theme/11101834_S_20200214170201.PNG","SUB_CATE_NAME":"기타","SUB_CATE_ID":"3","SUB_MENU_IMG_URI":"/"},
+  {"SUB_CATE_IMG_URI":"/smgis/ucimgs/theme/11101834_S_20200214170223.PNG","SUB_CATE_NAME":"대중교통","SUB_CATE_ID":"4","SUB_MENU_IMG_URI":"/"},
+  {"SUB_CATE_IMG_URI":"/smgis/ucimgs/theme/11101834_S_20200214170236.PNG","SUB_CATE_NAME":"대형마트","SUB_CATE_ID":"5","SUB_MENU_IMG_URI":"/"},
+  {"SUB_CATE_IMG_URI":"/smgis/ucimgs/theme/11101834_S_20200214170246.PNG","SUB_CATE_NAME":"병원","SUB_CATE_ID":"6","SUB_MENU_IMG_URI":"/"},
+  {"SUB_CATE_IMG_URI":"/smgis/ucimgs/theme/11101834_S_20200214170257.PNG","SUB_CATE_NAME":"복지시설","SUB_CATE_ID":"7","SUB_MENU_IMG_URI":"/"},
+  {"SUB_CATE_IMG_URI":"/smgis/ucimgs/theme/11101834_S_20200214170312.PNG","SUB_CATE_NAME":"숙박업소","SUB_CATE_ID":"8","SUB_MENU_IMG_URI":"/"},
+  {"SUB_CATE_IMG_URI":"/smgis/ucimgs/theme/11101834_S_20200214170323.PNG","SUB_CATE_NAME":"어린이집","SUB_CATE_ID":"9","SUB_MENU_IMG_URI":"/"}],
+  "THM_IMG_MASH_URI_01":"","THM_ASSESS_SCORE":"0","THM_IMG_MASH_URI_02":"","THM_IMG_PICTO_URI":"/smgis/ucimgs/theme/11101834_P_20200214133907.PNG","THM_IMG_MENU_URI":"","THM_THEME_ID":"11101834","RNUM":"1","THM_IMG_MAIN_URI":"","THM_CONTENTS_COUNT":"11571","THM_IMG_MAIN_URI2":"/smgis/ucimgs/theme/11101834_M_20200214133907.PNG","THM_APP_W_LINK":"","THM_ORDER_NO":"1","THM_POLL_JSON":"&#91;{&#34;tit&#34;:&#34;&#34;,&#34;type&#34;:&#34;0&#34;,&#34;max&#34;:&#34;&#34;,&#34;select&#34;:&#91;&#34;&#34;&#93;,&#34;write&#34;:&#34;&#34;,&#34;etc&#34;:&#34;N&#34;,&#34;etc_input&#34;:&#34;N&#34;}&#93;","THM_APP_I_LINK":"","THM_THEME_STAT":"1","THM_USER_EDATE":"0001-01-01 00:00:00.0","THM_IMG_MASH_URI":"/smgis/ucimgs/theme/11101834_H_20200208005953.PNG","THM_THEME_TYPE":"2","THM_LINK_TYPE":""
+  }]
+}
+

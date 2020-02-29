@@ -1,0 +1,16 @@
+### 서울맵 테마
+https://map.seoul.go.kr/smgis/apps/theme.do
+
+### 서울맵 좌표 정보
+https://map.seoul.go.kr/smgis/ucdata/themeJs_postgis/11101834.js?_=1582961326321
+
+### 서울맵 시간별 좌표 정보
+POST https://map.seoul.go.kr/smgis/webs/templateMap/templateMap.do?mode=getContentsListByTime
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+
+themeId=11101834
+
+### 서울 확진자 경로 정보
+http://news.seoul.go.kr/welfare/archives/513105
+
+###
