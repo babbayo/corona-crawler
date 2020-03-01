@@ -23,17 +23,17 @@ module.exports = {
                     if (j === 0) {
                         const $ps = $($tdsFirst[j]).find("p")
                         onePersonData.webIndex = $($ps[0]).text(); // 연번: 77
-                        onePersonData.patientNumber = $($ps[1]).text(); //환자번호: (확인중) 또는 #123
+                        onePersonData.patientNumber = getNumber($($ps[1]).text()); //환자번호: (확인중) 또는 #123
                     } else if (j === 1) {
-                        onePersonData.patientInfo = $($tdsFirst[j]).text(); //인적사항: 한국인 (남, '87)
+                        onePersonData.patientInfo = trimStr($($tdsFirst[j]).text()); //인적사항: 한국인 (남, '87)
                     } else if (j === 2) {
-                        onePersonData.patientCaseInfo = $($tdsFirst[j]).text(); //감염경로: 서울65번 접촉자
+                        onePersonData.patientCaseInfo = trimStr($($tdsFirst[j]).text()); //감염경로: 서울65번 접촉자
                     } else if (j === 3) {
-                        onePersonData.patientConfirmedAt = $($tdsFirst[j]).text(); //확진일: 2/27
+                        onePersonData.patientConfirmedAt = trimStr($($tdsFirst[j]).text()); //확진일: 2/27
                     } else if (j === 4) {
-                        onePersonData.liveInRegion = $($tdsFirst[j]).text(); //거주지: 강남구
+                        onePersonData.liveInRegion = trimStr($($tdsFirst[j]).text()); //거주지: 강남구
                     } else if (j === 5) {
-                        onePersonData.liveInRegion = $($tdsFirst[j]).text(); //격리시설: 확인중 또는 서울의료원
+                        onePersonData.liveInRegion = trimStr($($tdsFirst[j]).text()); //격리시설: 확인중 또는 서울의료원
                     }
                 }
 
@@ -42,7 +42,7 @@ module.exports = {
                 for (let j = 0; j < $liFromTdsSecond.length; j++) {
                     const rawText = $($liFromTdsSecond[j]).text();
                     const dateStr = $($liFromTdsSecond[j]).find("strong").text(); // 2월 25일 또는 2월 21~22일
-                    const description = substract(rawText, dateStr);
+                    const description = trimStr(substract(rawText, dateStr));
                     const dateList = getDate(dateStr)
                     pathInfoList[j] = {
                         "dateStr": dateStr,
@@ -59,10 +59,32 @@ module.exports = {
     }
 }
 
+function trimStr(word) {
+    if (word == null || word === '') {
+        return word
+    }
+    return word.trim().replace('/n', '')
+}
+
 function substract(fullstr, partstr) {
     var start = fullstr.indexOf(partstr);
     var end = start + partstr.length;
     return fullstr.substring(0, start - 1) + fullstr.substring(end);
+}
+
+function getNumber(numberStr) {
+    if (numberStr== null || numberStr === '(확인중)') {
+        return ''
+    }
+    // var dateString = '2월 23일~26일";
+    var reggie = /(\d+)/g;
+    var dateArray = numberStr.match(reggie);
+    if (dateArray.length < 1) {
+        console.log(numberStr)
+        return ''
+    }
+    // console.log(dateArray)
+    return dateArray[0]
 }
 
 function getDate(dateStr) {
@@ -70,8 +92,8 @@ function getDate(dateStr) {
         return ['', '']
     }
     // var dateString = '2월 23일~26일";
-    var reggie = /(\d+)/;
-    var dateArray = reggie.exec(dateStr);
+    var reggie = /(\d+)/g;
+    var dateArray = dateStr.match(reggie)
     if (dateArray.length < 2) {
         console.log(dateStr)
         return ['', '']
