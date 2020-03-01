@@ -1,4 +1,5 @@
 const express = require('express')
+const request = require('request');
 const moment = require('moment-timezone');
 const seoul = require("./crawler/seoul");
 // const seoulMapTrace = require("./seoul-map-trace");
