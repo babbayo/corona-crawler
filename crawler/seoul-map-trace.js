@@ -1,7 +1,7 @@
 const request = require('request');
 
 module.exports = {
-    crawling: function () {
+    crawling: function (callback) {
         const options = {
             url: "https://map.seoul.go.kr/smgis/webs/templateMap/templateMap.do?mode=getContentsListByTime",
             headers: {
@@ -15,7 +15,8 @@ module.exports = {
         request.post(options, function (error, response, body) {
             // 해당 콜에 대한 응답을 받아 cheerio를 통해 파싱, jQuery처럼 사용하기위해 $변수에 할당
             const resObj = JSON.parse(body)
-            console.log(resObj.result[0])
+            // console.log(resObj.result[0])
+            callback(resObj.result)
         });
     }
 }

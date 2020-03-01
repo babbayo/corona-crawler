@@ -2,7 +2,7 @@ const cheerio = require('cheerio');
 const request = require('request');
 
 module.exports = {
-    crawling: function () {
+    crawling: function (callback) {
         const options = {
             url: "http://news.seoul.go.kr/welfare/archives/513105"
         }
@@ -13,6 +13,7 @@ module.exports = {
             const $ = cheerio.load(body);
             const $trs = $('#patients table tbody tr');
 
+            const list = [];
             for (let i = 0; i < $trs.length; i = i + 2) {
                 const onePersonData = {};
                 const $tdsFirst = $($trs[i]).find('td');
@@ -40,19 +41,20 @@ module.exports = {
                 const pathInfoList = [];
                 for (let j = 0; j < $liFromTdsSecond.length; j++) {
                     const rawText = $($liFromTdsSecond[j]).text();
-                    const date = $($liFromTdsSecond[j]).find("strong").text(); // 2월 25일 또는 2월 21~22일
-                    const description = substract(rawText, date);
+                    const dateStr = $($liFromTdsSecond[j]).find("strong").text(); // 2월 25일 또는 2월 21~22일
+                    const description = substract(rawText, dateStr);
+                    const dateList = getDate(dateStr)
                     pathInfoList[j] = {
-                        "date": date,
+                        "dateStr": dateStr,
+                        "date": dateList[0],
+                        "endDate": dateList[1],
                         "description": description
                     }
                 }
                 onePersonData.pathInfoList = pathInfoList
-                if (i == 0) {
-                    console.log(onePersonData)
-                }
-
+                list[i] = onePersonData
             }
+            callback(list)
         });
     }
 }
@@ -61,4 +63,30 @@ function substract(fullstr, partstr) {
     var start = fullstr.indexOf(partstr);
     var end = start + partstr.length;
     return fullstr.substring(0, start - 1) + fullstr.substring(end);
+}
+
+function getDate(dateStr) {
+    if (dateStr== null || dateStr === '') {
+        return ['', '']
+    }
+    // var dateString = '2월 23일~26일";
+    var reggie = /(\d+)/;
+    var dateArray = reggie.exec(dateStr);
+    if (dateArray.length < 2) {
+        console.log(dateStr)
+        return ['', '']
+    }
+    var monthTemp = dateArray[0];
+    var dayTemp = dateArray[1];
+    var endMonthTemp = dateArray.length === 4 ? dateArray[2] : monthTemp;
+    var endDayTemp = dateArray.length === 3 ? dateArray[2] : (dateArray.length === 4 ? dateArray[3] : '');
+
+    var month = monthTemp.length === 1 ? '0' + monthTemp : monthTemp
+    var day = dayTemp.length === 1 ? '0' + dayTemp : dayTemp
+    var endMonth = endMonthTemp.length === 1 ? '0' + endMonthTemp : endMonthTemp
+    var endDay = endDayTemp.length === 1 ? '0' + endDayTemp : endDayTemp
+
+    var date = `2020-` + month + '-' + day
+    var endDate = endDayTemp === '' ? '' : (`2020-` + endMonth + '-' + endDay)
+    return [date, endDate];
 }
